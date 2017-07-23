@@ -958,7 +958,7 @@ FreeQ[{a,b,c,d,e,f,g,h,m,n,p},x] && PositiveIntegerQ[q] &&
 
 
 Int[(a_.+b_.*x_)^m_.*(c_.+d_.*x_)^n_.*(e_.+f_.*x_)^p_.*(g_.+h_.*x_)^q_.,x_Symbol] :=
-  (* Defer[Int][(a+b*x)^m*(c+d*x)^n*(e+f*x)^p*(g+h*x)^q,x] /; *)
+  (* Int[(a+b*x)^m*(c+d*x)^n*(e+f*x)^p*(g+h*x)^q,x] /; *)
 	Int[(a+b*x)^m*(c+d*x)^n*(e+f*x)^p*(g+h*x)^q,x] /;
 FreeQ[{a,b,c,d,e,f,g,h,m,n,p,q},x]
 

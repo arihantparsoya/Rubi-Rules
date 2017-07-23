@@ -168,7 +168,7 @@ FreeQ[{a,b,c,d,m,n,p,q},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(g_.+h_.*x_)^m_.*(a_.+b_.*Log[c_.*(d_.*(e_.+f_.*x_)^p_.)^q_.])^n_.,x_Symbol] :=
-  Defer[Int][(g+h*x)^m*(a+b*Log[c*(d*(e+f*x)^p)^q])^n,x] /;
+  Int[(g+h*x)^m*(a+b*Log[c*(d*(e+f*x)^p)^q])^n,x] /;
 FreeQ[{a,b,c,d,e,f,g,h,m,n,p,q},x]
 
 
@@ -201,7 +201,7 @@ FreeQ[{a,b,c,d,e,f,g,h,i,j,p,q},x] && IntegerQ[m] && PositiveIntegerQ[n]
 
 
 Int[(i_.+j_.*x_)^m_.*(a_.+b_.*Log[c_.*(d_.*(e_.+f_.*x_)^p_.)^q_.])^n_./(g_.+h_.*x_),x_Symbol] :=
-  Defer[Int][(i+j*x)^m*(a+b*Log[c*(d*(e+f*x)^p)^q])^n/(g+h*x),x] /;
+  Int[(i+j*x)^m*(a+b*Log[c*(d*(e+f*x)^p)^q])^n/(g+h*x),x] /;
 FreeQ[{a,b,c,d,e,f,g,h,i,j,m,n,p,q},x]
 
 
@@ -968,7 +968,7 @@ FreeQ[{a,b,n},x] && IntegerQ[p]
 
 
 Int[u_.*(a_.+b_.*Log[c_.*(d_.*(e_.+f_.*x_)^p_.)^q_.])^n_,x_Symbol] :=
-  Defer[Int][u*(a+b*Log[c*(d*(e+f*x)^p)^q])^n,x] /;
+  Int[u*(a+b*Log[c*(d*(e+f*x)^p)^q])^n,x] /;
 FreeQ[{a,b,c,d,e,f,n,p,q},x] && AlgebraicFunctionQ[u,x]
 
 

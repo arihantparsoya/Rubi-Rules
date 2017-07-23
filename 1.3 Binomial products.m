@@ -2175,7 +2175,7 @@ FreeQ[{a,b,c,d,e,f,p,q,r},x] && NegativeIntegerQ[n]
 
 
 Int[(a_+b_.*x_^n_)^p_.*(c_+d_.*x_^n_)^q_.*(e_+f_.*x_^n_)^r_.,x_Symbol] :=
-  Defer[Int][(a+b*x^n)^p*(c+d*x^n)^q*(e+f*x^n)^r,x] /;
+  Int[(a+b*x^n)^p*(c+d*x^n)^q*(e+f*x^n)^r,x] /;
 FreeQ[{a,b,c,d,e,f,n,p,q,r},x]
 
 
@@ -2426,7 +2426,7 @@ FreeQ[{a,b,c,d,e,f,g,m,n,p,q,r},x] && EqQ[mn,-n]
 
 
 Int[(g_.*x_)^m_.*(a_+b_.*x_^n_)^p_.*(c_+d_.*x_^n_)^q_.*(e_+f_.*x_^n_)^r_.,x_Symbol] :=
-  Defer[Int][(g*x)^m*(a+b*x^n)^p*(c+d*x^n)^q*(e+f*x^n)^r,x] /;
+  Int[(g*x)^m*(a+b*x^n)^p*(c+d*x^n)^q*(e+f*x^n)^r,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p,q,r},x]
 
 

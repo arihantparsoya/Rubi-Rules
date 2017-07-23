@@ -120,12 +120,12 @@ FreeQ[{a,b,c,n},x] && PositiveIntegerQ[m]
 
 
 Int[(d_.*x_)^m_.*(a_.+b_.*ArcSinh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d*x)^m*(a+b*ArcSinh[c*x])^n,x] /;
+  Int[(d*x)^m*(a+b*ArcSinh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,m,n},x]
 
 
 Int[(d_.*x_)^m_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d*x)^m*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[(d*x)^m*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,m,n},x]
 
 
@@ -413,17 +413,17 @@ FreeQ[{a,b,c,d,e,n},x] && NonzeroQ[c^2*d+e] && IntegerQ[p] && (p>0 || PositiveIn
 
 
 Int[(d_+e_.*x_^2)^p_.*(a_.+b_.*ArcSinh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcSinh[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcSinh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x]
 
 
 Int[(d_+e_.*x_^2)^p_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x] && IntegerQ[p]
 
 
 Int[(d1_+e1_.*x_)^p_.*(d2_+e2_.*x_)^p_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d1+e1*x)^p*(d2+e2*x)^p*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[(d1+e1*x)^p*(d2+e2*x)^p*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,d1,e1,d2,e2,n,p},x]
 
 
@@ -1113,17 +1113,17 @@ FreeQ[{a,b,c,d,e,f},x] && NonzeroQ[c^2*d+e] && PositiveIntegerQ[n] && IntegerQ[p
 
 
 Int[(f_.*x_)^m_.*(d_+e_.*x_^2)^p_.*(a_.+b_.*ArcSinh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(f*x)^m*(d+e*x^2)^p*(a+b*ArcSinh[c*x])^n,x] /;
+  Int[(f*x)^m*(d+e*x^2)^p*(a+b*ArcSinh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n,p},x]
 
 
 Int[(f_.*x_)^m_.*(d_+e_.*x_^2)^p_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(f*x)^m*(d+e*x^2)^p*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[(f*x)^m*(d+e*x^2)^p*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n,p},x] && IntegerQ[p]
 
 
 Int[(f_.*x_)^m_.*(d1_+e1_.*x_)^p_.*(d2_+e2_.*x_)^p_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(f*x)^m*(d1+e1*x)^p*(d2+e2*x)^p*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[(f*x)^m*(d1+e1*x)^p*(d2+e2*x)^p*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,d1,e1,d2,e2,f,m,n,p},x]
 
 
@@ -1532,12 +1532,12 @@ FreeQ[{a,b,c,d1,e1,d2,e2},x] && RationalFunctionQ[RFx,x] && PositiveIntegerQ[n] 
 
 
 Int[u_.*(a_.+b_.*ArcSinh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][u*(a+b*ArcSinh[c*x])^n,x] /;
+  Int[u*(a+b*ArcSinh[c*x])^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
 Int[u_.*(a_.+b_.*ArcCosh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][u*(a+b*ArcCosh[c*x])^n,x] /;
+  Int[u*(a+b*ArcCosh[c*x])^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
@@ -1858,12 +1858,12 @@ FreeQ[{a,b,c},x] && PositiveIntegerQ[n]
 
 
 Int[(a_.+b_.*ArcTanh[c_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*ArcTanh[c*x])^n,x] /;
+  Int[(a+b*ArcTanh[c*x])^n,x] /;
 FreeQ[{a,b,c,n},x] && Not[PositiveIntegerQ[n]]
 
 
 Int[(a_.+b_.*ArcCoth[c_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*ArcCoth[c*x])^n,x] /;
+  Int[(a+b*ArcCoth[c*x])^n,x] /;
 FreeQ[{a,b,c,n},x] && Not[PositiveIntegerQ[n]]
 
 
@@ -1956,12 +1956,12 @@ FreeQ[{a,b,c,d,e},x] && PositiveIntegerQ[n,p]
 
 
 Int[(d_.+e_.*x_)^p_.*(a_.+b_.*ArcTanh[c_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(d+e*x)^p*(a+b*ArcTanh[c*x])^n,x] /;
+  Int[(d+e*x)^p*(a+b*ArcTanh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x] && Not[PositiveIntegerQ[n]]
 
 
 Int[(d_.+e_.*x_)^p_.*(a_.+b_.*ArcCoth[c_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(d+e*x)^p*(a+b*ArcCoth[c*x])^n,x] /;
+  Int[(d+e*x)^p*(a+b*ArcCoth[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x] && Not[PositiveIntegerQ[n]]
 
 
@@ -2012,12 +2012,12 @@ FreeQ[{a,b,c,d,e,m},x] && IntegerQ[p] && PositiveIntegerQ[n] && (p>0 || NonzeroQ
 
 
 Int[x_^m_.*(d_.+e_.*x_)^p_.*(a_.+b_.*ArcTanh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x)^p*(a+b*ArcTanh[c*x])^n,x] /;
+  Int[x^m*(d+e*x)^p*(a+b*ArcTanh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
 Int[x_^m_.*(d_.+e_.*x_)^p_.*(a_.+b_.*ArcCoth[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x)^p*(a+b*ArcCoth[c*x])^n,x] /;
+  Int[x^m*(d+e*x)^p*(a+b*ArcCoth[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
@@ -2250,12 +2250,12 @@ FreeQ[{a,b,c,d,e},x] && IntegerQ[p] && PositiveIntegerQ[n]
 
 
 Int[(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcTanh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcTanh[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcTanh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x]
 
 
 Int[(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcCoth[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcCoth[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcCoth[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x]
 
 
@@ -2692,12 +2692,12 @@ FreeQ[{a,b,c,d,e,m,p},x]
 
 
 Int[x_^m_.*(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcTanh[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x^2)^p*(a+b*ArcTanh[c*x])^n,x] /;
+  Int[x^m*(d+e*x^2)^p*(a+b*ArcTanh[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
 Int[x_^m_.*(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcCoth[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x^2)^p*(a+b*ArcCoth[c*x])^n,x] /;
+  Int[x^m*(d+e*x^2)^p*(a+b*ArcCoth[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
@@ -3349,12 +3349,12 @@ FreeQ[{a,b,c,d},x] && PositiveIntegerQ[n]
 
 
 Int[(a_.+b_.*ArcTanh[c_+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*ArcTanh[c+d*x])^n,x] /;
+  Int[(a+b*ArcTanh[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,n},x] && Not[PositiveIntegerQ[n]]
 
 
 Int[(a_.+b_.*ArcCoth[c_+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*ArcCoth[c+d*x])^n,x] /;
+  Int[(a+b*ArcCoth[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,n},x] && Not[PositiveIntegerQ[n]]
 
 
@@ -3369,12 +3369,12 @@ FreeQ[{a,b,c,d,e,f,m,n},x] && PositiveIntegerQ[n]
 
 
 Int[(e_.+f_.*x_)^m_*(a_.+b_.*ArcTanh[c_+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(e+f*x)^m*(a+b*ArcTanh[c+d*x])^n,x] /;
+  Int[(e+f*x)^m*(a+b*ArcTanh[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x] && Not[PositiveIntegerQ[n]]
 
 
 Int[(e_.+f_.*x_)^m_*(a_.+b_.*ArcCoth[c_+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(e+f*x)^m*(a+b*ArcCoth[c+d*x])^n,x] /;
+  Int[(e+f*x)^m*(a+b*ArcCoth[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x] && Not[PositiveIntegerQ[n]]
 
 
@@ -3411,12 +3411,12 @@ FreeQ[{a,b,c,d},x] && RationalQ[n]
 
 
 Int[ArcTanh[a_+b_.*x_]/(c_+d_.*x_^n_),x_Symbol] :=
-  Defer[Int][ArcTanh[a+b*x]/(c+d*x^n),x] /;
+  Int[ArcTanh[a+b*x]/(c+d*x^n),x] /;
 FreeQ[{a,b,c,d,n},x] && Not[RationalQ[n]]
 
 
 Int[ArcCoth[a_+b_.*x_]/(c_+d_.*x_^n_),x_Symbol] :=
-  Defer[Int][ArcCoth[a+b*x]/(c+d*x^n),x] /;
+  Int[ArcCoth[a+b*x]/(c+d*x^n),x] /;
 FreeQ[{a,b,c,d,n},x] && Not[RationalQ[n]]
 
 
@@ -3918,12 +3918,12 @@ FreeQ[{a,b,c,n},x] && IntegerQ[m]
 
 
 Int[x_^m_.*(a_.+b_.*ArcSech[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*ArcSech[c*x])^n,x] /;
+  Int[x^m*(a+b*ArcSech[c*x])^n,x] /;
 FreeQ[{a,b,c,m,n},x]
 
 
 Int[x_^m_.*(a_.+b_.*ArcCsch[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*ArcCsch[c*x])^n,x] /;
+  Int[x^m*(a+b*ArcCsch[c*x])^n,x] /;
 FreeQ[{a,b,c,m,n},x]
 
 
@@ -3970,12 +3970,12 @@ FreeQ[{a,b,c,d,e,n},x] && ZeroQ[e-c^2*d] && IntegerQ[p+1/2] && Not[PositiveQ[e] 
 
 
 Int[(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcSech[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcSech[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcSech[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x]
 
 
 Int[(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcCsch[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x^2)^p*(a+b*ArcCsch[c*x])^n,x] /;
+  Int[(d+e*x^2)^p*(a+b*ArcCsch[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,n,p},x]
 
 
@@ -4040,12 +4040,12 @@ FreeQ[{a,b,c,d,e,n},x] && ZeroQ[e-c^2*d] && IntegerQ[m] && IntegerQ[p+1/2] && No
 
 
 Int[x_^m_.*(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcSech[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x^2)^p*(a+b*ArcSech[c*x])^n,x] /;
+  Int[x^m*(d+e*x^2)^p*(a+b*ArcSech[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
 Int[x_^m_.*(d_.+e_.*x_^2)^p_.*(a_.+b_.*ArcCsch[c_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][x^m*(d+e*x^2)^p*(a+b*ArcCsch[c*x])^n,x] /;
+  Int[x^m*(d+e*x^2)^p*(a+b*ArcCsch[c*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 

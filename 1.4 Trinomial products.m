@@ -1309,12 +1309,12 @@ FreeQ[{a,c,d,e,n,p},x] && ZeroQ[n2-2*n] && NonzeroQ[c*d^2+a*e^2] && NegativeInte
 
 
 Int[(d_+e_.*x_^n_)^q_*(a_+b_.*x_^n_+c_.*x_^n2_)^p_,x_Symbol] :=
-  Defer[Int][(d+e*x^n)^q*(a+b*x^n+c*x^(2*n))^p,x] /;
+  Int[(d+e*x^n)^q*(a+b*x^n+c*x^(2*n))^p,x] /;
 FreeQ[{a,b,c,d,e,n,p,q},x] && ZeroQ[n2-2*n] && Not[IntegersQ[n,q]]
 
 
 Int[(d_+e_.*x_^n_)^q_*(a_+c_.*x_^n2_)^p_,x_Symbol] :=
-  Defer[Int][(d+e*x^n)^q*(a+c*x^(2*n))^p,x] /;
+  Int[(d+e*x^n)^q*(a+c*x^(2*n))^p,x] /;
 FreeQ[{a,c,d,e,n,p,q},x] && ZeroQ[n2-2*n] && Not[IntegersQ[n,q]]
 
 
@@ -2089,12 +2089,12 @@ FreeQ[{a,c,d,e,f,m,n,p,q},x] && ZeroQ[n2-2*n] && NegativeIntegerQ[q] && Not[Inte
 
 
 Int[(f_.*x_)^m_.*(d_+e_.*x_^n_)^q_.*(a_+b_.*x_^n_+c_.*x_^n2_.)^p_.,x_Symbol] :=
-  Defer[Int][(f*x)^m*(d+e*x^n)^q*(a+b*x^n+c*x^(2*n))^p,x] /;
+  Int[(f*x)^m*(d+e*x^n)^q*(a+b*x^n+c*x^(2*n))^p,x] /;
 FreeQ[{a,b,c,d,e,f,m,n,p,q},x] && ZeroQ[n2-2*n]
 
 
 Int[(f_.*x_)^m_.*(d_+e_.*x_^n_)^q_.*(a_+c_.*x_^n2_.)^p_.,x_Symbol] :=
-  Defer[Int][(f*x)^m*(d+e*x^n)^q*(a+c*x^(2*n))^p,x] /;
+  Int[(f*x)^m*(d+e*x^n)^q*(a+c*x^(2*n))^p,x] /;
 FreeQ[{a,c,d,e,f,m,n,p,q},x] && ZeroQ[n2-2*n]
 
 
@@ -2227,7 +2227,7 @@ FreeQ[{a,b,c,n,p,q},x] && ZeroQ[r-(2*n-q)] && PosQ[n-q] && Not[IntegerQ[p]]
 
 
 Int[(a_.*x_^q_.+b_.*x_^n_.+c_.*x_^r_.)^p_,x_Symbol] :=
-  Defer[Int][(a*x^q+b*x^n+c*x^(2*n-q))^p,x] /;
+  Int[(a*x^q+b*x^n+c*x^(2*n-q))^p,x] /;
 FreeQ[{a,b,c,n,p,q},x] && ZeroQ[r-(2*n-q)]
 
 
@@ -2465,7 +2465,7 @@ FreeQ[{a,b,c,A,B,j,k,p},x] && ZeroQ[q-(k-j)] && ZeroQ[n-(2*k-j)] && PosQ[k-j] &&
 
 
 Int[(A_+B_.*x_^j_.)*(a_.*x_^q_.+b_.*x_^n_.+c_.*x_^r_.)^p_.,x_Symbol] :=
-  Defer[Int][(A+B*x^(n-q))*(a*x^q+b*x^n+c*x^(2*n-q))^p,x] /;
+  Int[(A+B*x^(n-q))*(a*x^q+b*x^n+c*x^(2*n-q))^p,x] /;
 FreeQ[{a,b,c,A,B,n,p,q},x] && ZeroQ[j-(n-q)] && ZeroQ[r-(2*n-q)]
 
 

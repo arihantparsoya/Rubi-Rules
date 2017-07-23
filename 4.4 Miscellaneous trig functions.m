@@ -1134,7 +1134,7 @@ InverseFunctionFreeQ[u,x]] *)
 
 Int[u_,x_Symbol] :=
   With[{v=ActivateTrig[u]},
-   Defer[Int][v,x]] /;
+   Int[v,x]] /;
 Not[InertTrigFreeQ[u]]
 
 

@@ -80,7 +80,7 @@ FreeQ[{F,a,b,g,m,n,p},x] && LinearQ[v,x] && PowerOfLinearQ[u,x] && Not[LinearMat
 
 
 Int[(c_.+d_.*x_)^m_.*(a_+b_.*(F_^(g_.*(e_.+f_.*x_)))^n_.)^p_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*(F^(g*(e+f*x)))^n)^p,x] /;
+  Int[(c+d*x)^m*(a+b*(F^(g*(e+f*x)))^n)^p,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
@@ -104,7 +104,7 @@ FreeQ[{F,a,b,c,d,e,f,g,m,n,p},x] && NonzeroQ[p+1]
 
 
 Int[(c_.+d_.*x_)^m_.*(F_^(g_.*(e_.+f_.*x_)))^n_.*(a_.+b_.*(F_^(g_.*(e_.+f_.*x_)))^n_.)^p_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(F^(g*(e+f*x)))^n*(a+b*(F^(g*(e+f*x)))^n)^p,x] /;
+  Int[(c+d*x)^m*(F^(g*(e+f*x)))^n*(a+b*(F^(g*(e+f*x)))^n)^p,x] /;
 FreeQ[{F,a,b,c,d,e,f,g,m,n,p},x]
 
 
@@ -290,7 +290,7 @@ FreeQ[{F,a,b,c,d,e,f},x] && NonzeroQ[d*e-c*f] && IntegerQ[m] && m<-1
 
 
 Int[F_^(a_.+b_.*(c_.+d_.*x_)^n_)/(e_.+f_.*x_),x_Symbol] :=
-  Defer[Int][F^(a+b*(c+d*x)^n)/(e+f*x),x] /;
+  Int[F^(a+b*(c+d*x)^n)/(e+f*x),x] /;
 FreeQ[{F,a,b,c,d,e,f,n},x] && NonzeroQ[d*e-c*f]
 
 
@@ -404,7 +404,7 @@ FreeQ[{F,a,b,c,d,e},x] && NonzeroQ[b*e-2*c*d] && RationalQ[m] && m<-1
 
 
 Int[(d_.+e_.*x_)^m_.*F_^(a_.+b_.*x_+c_.*x_^2),x_Symbol] :=
-  Defer[Int][(d+e*x)^m*F^(a+b*x+c*x^2),x] /;
+  Int[(d+e*x)^m*F^(a+b*x+c*x^2),x] /;
 FreeQ[{F,a,b,c,d,e,m},x]
 
 

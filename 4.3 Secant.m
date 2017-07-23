@@ -308,12 +308,12 @@ FreeQ[{a,b,c,d},x] && NonzeroQ[a^2-b^2] && RationalQ[n] && n<-1 && IntegerQ[2*n]
 
 
 Int[(a_+b_.*sec[c_.+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*Sec[c+d*x])^n,x] /;
+  Int[(a+b*Sec[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,n},x] && NonzeroQ[a^2-b^2] && Not[IntegerQ[2*n]]
 
 
 Int[(a_+b_.*csc[c_.+d_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(a+b*Csc[c+d*x])^n,x] /;
+  Int[(a+b*Csc[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,n},x] && NonzeroQ[a^2-b^2] && Not[IntegerQ[2*n]]
 
 
@@ -1309,12 +1309,12 @@ FreeQ[{a,b,d,e,f,n},x] && PositiveIntegerQ[m]
 
 
 Int[(a_+b_.*sec[e_.+f_.*x_])^m_.*(d_.*sec[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n,x] /;
+  Int[(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n,x] /;
 FreeQ[{a,b,d,e,f,m,n},x]
 
 
 Int[(a_+b_.*csc[e_.+f_.*x_])^m_.*(d_.*csc[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n,x] /;
+  Int[(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n,x] /;
 FreeQ[{a,b,d,e,f,m,n},x]
 
 
@@ -1378,12 +1378,12 @@ FreeQ[{a,b,e,f,g,m,p},x] && (ZeroQ[a^2-b^2] || IntegersQ[2*m,p])
 
 
 Int[(g_.*sin[e_.+f_.*x_])^p_.*(a_+b_.*sec[e_.+f_.*x_])^m_.,x_Symbol] :=
-  Defer[Int][(g*Sin[e+f*x])^p*(a+b*Sec[e+f*x])^m,x] /;
+  Int[(g*Sin[e+f*x])^p*(a+b*Sec[e+f*x])^m,x] /;
 FreeQ[{a,b,e,f,g,m,p},x]
 
 
 Int[(g_.*cos[e_.+f_.*x_])^p_.*(a_+b_.*csc[e_.+f_.*x_])^m_.,x_Symbol] :=
-  Defer[Int][(g*Cos[e+f*x])^p*(a+b*Csc[e+f*x])^m,x] /;
+  Int[(g*Cos[e+f*x])^p*(a+b*Csc[e+f*x])^m,x] /;
 FreeQ[{a,b,e,f,g,m,p},x]
 
 
@@ -1615,12 +1615,12 @@ FreeQ[{a,b,c,d,n},x] && NonzeroQ[a^2-b^2] && PositiveIntegerQ[m/2] *)
 
 
 Int[(e_.*tan[c_.+d_.*x_])^m_.*(a_.+b_.*sec[c_.+d_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(e*Tan[c+d*x])^m*(a+b*Sec[c+d*x])^n,x] /;
+  Int[(e*Tan[c+d*x])^m*(a+b*Sec[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
 Int[(e_.*cot[c_.+d_.*x_])^m_.*(a_.+b_.*csc[c_.+d_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(e*Cot[c+d*x])^m*(a+b*Csc[c+d*x])^n,x] /;
+  Int[(e*Cot[c+d*x])^m*(a+b*Csc[c+d*x])^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
@@ -2124,12 +2124,12 @@ FreeQ[{a,b,c,d,e,f,m,n},x] && PositiveIntegerQ[n]
 
 
 Int[(a_+b_.*sec[e_.+f_.*x_])^m_.*(c_+d_.*sec[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(a+b*Sec[e+f*x])^m*(c+d*Sec[e+f*x])^n,x] /;
+  Int[(a+b*Sec[e+f*x])^m*(c+d*Sec[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
 Int[(a_+b_.*csc[e_.+f_.*x_])^m_.*(c_+d_.*csc[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(a+b*Csc[e+f*x])^m*(c+d*Csc[e+f*x])^n,x] /;
+  Int[(a+b*Csc[e+f*x])^m*(c+d*Csc[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
@@ -2655,12 +2655,12 @@ FreeQ[{a,b,c,d,e,f,g,m,n,p},x] && NonzeroQ[b*c-a*d] && (IntegersQ[m,n] || Intege
 
 
 Int[(g_.*sec[e_.+f_.*x_])^p_.*(a_.+b_.*sec[e_.+f_.*x_])^m_*(c_.+d_.*sec[e_.+f_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(g*Sec[e+f*x])^p*(a+b*Sec[e+f*x])^m*(c+d*Sec[e+f*x])^n,x] /;
+  Int[(g*Sec[e+f*x])^p*(a+b*Sec[e+f*x])^m*(c+d*Sec[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
 Int[(g_.*csc[e_.+f_.*x_])^p_.*(a_.+b_.*csc[e_.+f_.*x_])^m_*(c_.+d_.*csc[e_.+f_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(g*Csc[e+f*x])^p*(a+b*Csc[e+f*x])^m*(c+d*Csc[e+f*x])^n,x] /;
+  Int[(g*Csc[e+f*x])^p*(a+b*Csc[e+f*x])^m*(c+d*Csc[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
@@ -3194,12 +3194,12 @@ FreeQ[{a,b,d,e,f,A,B,n},x] && NonzeroQ[A*b-a*B] && NonzeroQ[a^2-b^2]
 
 
 Int[(a_+b_.*sec[e_.+f_.*x_])^m_*(d_.*sec[e_.+f_.*x_])^n_.*(A_+B_.*sec[e_.+f_.*x_]),x_Symbol] :=
-  Defer[Int][(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+B*Sec[e+f*x]),x] /;
+  Int[(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+B*Sec[e+f*x]),x] /;
 FreeQ[{a,b,d,e,f,A,B,m,n},x] && NonzeroQ[A*b-a*B] && NonzeroQ[a^2-b^2]
 
 
 Int[(a_+b_.*csc[e_.+f_.*x_])^m_*(d_.*csc[e_.+f_.*x_])^n_.*(A_+B_.*csc[e_.+f_.*x_]),x_Symbol] :=
-  Defer[Int][(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+B*Csc[e+f*x]),x] /;
+  Int[(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+B*Csc[e+f*x]),x] /;
 FreeQ[{a,b,d,e,f,A,B,m,n},x] && NonzeroQ[A*b-a*B] && NonzeroQ[a^2-b^2]
 
 
@@ -4030,22 +4030,22 @@ FreeQ[{a,b,d,e,f,A,C},x] && NonzeroQ[a^2-b^2]
 
 
 Int[(a_+b_.*sec[e_.+f_.*x_])^m_.*(d_.*sec[e_.+f_.*x_])^n_.*(A_.+B_.*sec[e_.+f_.*x_]+C_.*sec[e_.+f_.*x_]^2),x_Symbol] :=
-  Defer[Int][(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+B*Sec[e+f*x]+C*Sec[e+f*x]^2),x] /;
+  Int[(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+B*Sec[e+f*x]+C*Sec[e+f*x]^2),x] /;
 FreeQ[{a,b,d,e,f,A,B,C,m,n},x]
 
 
 Int[(a_+b_.*csc[e_.+f_.*x_])^m_.*(d_.*csc[e_.+f_.*x_])^n_.*(A_.+B_.*csc[e_.+f_.*x_]+C_.*csc[e_.+f_.*x_]^2),x_Symbol] :=
-  Defer[Int][(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+B*Csc[e+f*x]+C*Csc[e+f*x]^2),x] /;
+  Int[(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+B*Csc[e+f*x]+C*Csc[e+f*x]^2),x] /;
 FreeQ[{a,b,d,e,f,A,B,C,m,n},x]
 
 
 Int[(a_+b_.*sec[e_.+f_.*x_])^m_.*(d_.*sec[e_.+f_.*x_])^n_.*(A_.+C_.*sec[e_.+f_.*x_]^2),x_Symbol] :=
-  Defer[Int][(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+C*Sec[e+f*x]^2),x] /;
+  Int[(a+b*Sec[e+f*x])^m*(d*Sec[e+f*x])^n*(A+C*Sec[e+f*x]^2),x] /;
 FreeQ[{a,b,d,e,f,A,C,m,n},x]
 
 
 Int[(a_+b_.*csc[e_.+f_.*x_])^m_.*(d_.*csc[e_.+f_.*x_])^n_.*(A_.+C_.*csc[e_.+f_.*x_]^2),x_Symbol] :=
-  Defer[Int][(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+C*Csc[e+f*x]^2),x] /;
+  Int[(a+b*Csc[e+f*x])^m*(d*Csc[e+f*x])^n*(A+C*Csc[e+f*x]^2),x] /;
 FreeQ[{a,b,d,e,f,A,C,m,n},x]
 
 
@@ -4516,12 +4516,12 @@ FreeQ[{a,b,m,n},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Sec[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Sec[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Sec[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Csc[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Csc[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Csc[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
@@ -4543,12 +4543,12 @@ FreeQ[{a,b,c,d,p},x] && PositiveIntegerQ[1/n] && IntegerQ[p]
 
 
 Int[(a_.+b_.*Sec[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Sec[c+d*x^n])^p,x] /;
+  Int[(a+b*Sec[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
 Int[(a_.+b_.*Csc[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Csc[c+d*x^n])^p,x] /;
+  Int[(a+b*Csc[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
@@ -4583,12 +4583,12 @@ FreeQ[{a,b,c,d,m,n,p},x] && PositiveIntegerQ[Simplify[(m+1)/n]] && IntegerQ[p]
 
 
 Int[x_^m_.*(a_.+b_.*Sec[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Sec[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Sec[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
 Int[x_^m_.*(a_.+b_.*Csc[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Csc[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Csc[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 

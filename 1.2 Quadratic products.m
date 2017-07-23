@@ -2113,12 +2113,12 @@ FreeQ[{a,c,d,e,f,g,m,p},x] && NonzeroQ[e*f-d*g] && NonzeroQ[c*d^2+a*e^2] && Posi
 
 
 Int[(d_.+e_.*x_)^m_.*(f_.+g_.*x_)^n_.*(a_.+b_.*x_+c_.*x_^2)^p_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*(f+g*x)^n*(a+b*x+c*x^2)^p,x] /;
+  Int[(d+e*x)^m*(f+g*x)^n*(a+b*x+c*x^2)^p,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
 Int[(d_.+e_.*x_)^m_.*(f_.+g_.*x_)^n_.*(a_+c_.*x_^2)^p_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*(f+g*x)^n*(a+c*x^2)^p,x] /;
+  Int[(d+e*x)^m*(f+g*x)^n*(a+c*x^2)^p,x] /;
 FreeQ[{a,c,d,e,f,g,m,n,p},x]
 
 
@@ -2467,12 +2467,12 @@ FreeQ[{a,b,c,d,f},x] && NonzeroQ[b^2-4*a*c]
 
 
 Int[(a_.+b_.*x_+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_,x_Symbol] :=
-  Defer[Int][(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q,x] /;
+  Int[(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q,x] /;
 FreeQ[{a,b,c,d,e,f,p,q},x]
 
 
 Int[(a_+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_,x_Symbol] :=
-  Defer[Int][(a+c*x^2)^p*(d+e*x+f*x^2)^q,x] /;
+  Int[(a+c*x^2)^p*(d+e*x+f*x^2)^q,x] /;
 FreeQ[{a,c,d,e,f,p,q},x]
 
 
@@ -3064,12 +3064,12 @@ FreeQ[{a,c,d,f,g,h},x] && ZeroQ[c*d+3*a*f] && ZeroQ[c*g^2+9*a*h^2] && Not[Positi
 
 
 Int[(a_.+b_.*x_+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(g_.+h_.*x_),x_Symbol] :=
-  Defer[Int][(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(g+h*x),x] /;
+  Int[(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(g+h*x),x] /;
 FreeQ[{a,b,c,d,e,f,g,h,p,q},x]
 
 
 Int[(a_.+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(g_.+h_.*x_),x_Symbol] :=
-  Defer[Int][(a+c*x^2)^p*(d+e*x+f*x^2)^q*(g+h*x),x] /;
+  Int[(a+c*x^2)^p*(d+e*x+f*x^2)^q*(g+h*x),x] /;
 FreeQ[{a,c,d,e,f,g,h,p,q},x]
 
 
@@ -3476,22 +3476,22 @@ FreeQ[{a,b,c,d,f,A,C},x] && NonzeroQ[b^2-4*a*c]
 
 
 Int[(a_.+b_.*x_+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(A_.+B_.*x_+C_.*x_^2),x_Symbol] :=
-  Defer[Int][(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(A+B*x+C*x^2),x] /;
+  Int[(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(A+B*x+C*x^2),x] /;
 FreeQ[{a,b,c,d,e,f,A,B,C,p,q},x]
 
 
 Int[(a_.+b_.*x_+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(A_.+C_.*x_^2),x_Symbol] :=
-  Defer[Int][(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(A+C*x^2),x] /;
+  Int[(a+b*x+c*x^2)^p*(d+e*x+f*x^2)^q*(A+C*x^2),x] /;
 FreeQ[{a,b,c,d,e,f,A,C,p,q},x]
 
 
 Int[(a_.+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(A_.+B_.*x_+C_.*x_^2),x_Symbol] :=
-  Defer[Int][(a+c*x^2)^p*(d+e*x+f*x^2)^q*(A+B*x+C*x^2),x] /;
+  Int[(a+c*x^2)^p*(d+e*x+f*x^2)^q*(A+B*x+C*x^2),x] /;
 FreeQ[{a,c,d,e,f,A,B,C,p,q},x]
 
 
 Int[(a_.+c_.*x_^2)^p_*(d_.+e_.*x_+f_.*x_^2)^q_*(A_.+C_.*x_^2),x_Symbol] :=
-  Defer[Int][(a+c*x^2)^p*(d+e*x+f*x^2)^q*(A+C*x^2),x] /;
+  Int[(a+c*x^2)^p*(d+e*x+f*x^2)^q*(A+C*x^2),x] /;
 FreeQ[{a,c,d,e,f,A,C,p,q},x]
 
 

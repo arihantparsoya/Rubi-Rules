@@ -1304,12 +1304,12 @@ FreeQ[{a,b,c,n},x] && ZeroQ[n2-2*n] && PolyQ[Pq,x] && NegativeIntegerQ[p+1]
 
 
 Int[(d_.*x_)^m_.*Pq_*(a_+b_.*x_^n_.+c_.*x_^n2_.)^p_.,x_Symbol] :=
-  Defer[Int][(d*x)^m*Pq*(a+b*x^n+c*x^(2*n))^p,x] /;
+  Int[(d*x)^m*Pq*(a+b*x^n+c*x^(2*n))^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x] && ZeroQ[n2-2*n] && (PolyQ[Pq,x] || PolyQ[Pq,x^n])
 
 
 Int[Pq_*(a_+b_.*x_^n_.+c_.*x_^n2_.)^p_.,x_Symbol] :=
-  Defer[Int][Pq*(a+b*x^n+c*x^(2*n))^p,x] /;
+  Int[Pq*(a+b*x^n+c*x^(2*n))^p,x] /;
 FreeQ[{a,b,c,n,p},x] && ZeroQ[n2-2*n] && (PolyQ[Pq,x] || PolyQ[Pq,x^n])
 
 

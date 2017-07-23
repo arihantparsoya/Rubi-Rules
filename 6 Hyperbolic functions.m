@@ -264,12 +264,12 @@ FreeQ[{a,b,m,n},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Sinh[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Sinh[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Sinh[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Cosh[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Cosh[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Cosh[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
@@ -325,12 +325,12 @@ FreeQ[{a,b,c,d},x] && NegativeIntegerQ[p] && NegativeIntegerQ[n]
 
 
 Int[(a_+b_.*x_^n_)^p_*Sinh[c_.+d_.*x_],x_Symbol] :=
-  Defer[Int][(a+b*x^n)^p*Sinh[c+d*x],x] /;
+  Int[(a+b*x^n)^p*Sinh[c+d*x],x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
 Int[(a_+b_.*x_^n_)^p_*Cosh[c_.+d_.*x_],x_Symbol] :=
-  Defer[Int][(a+b*x^n)^p*Cosh[c+d*x],x] /;
+  Int[(a+b*x^n)^p*Cosh[c+d*x],x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
@@ -391,12 +391,12 @@ FreeQ[{a,b,c,d,m},x] && NegativeIntegerQ[p] && NegativeIntegerQ[n]
 
 
 Int[(e_.*x_)^m_.*(a_+b_.*x_^n_)^p_.*Sinh[c_.+d_.*x_],x_Symbol] :=
-  Defer[Int][(e*x)^m*(a+b*x^n)^p*Sinh[c+d*x],x] /;
+  Int[(e*x)^m*(a+b*x^n)^p*Sinh[c+d*x],x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
 Int[(e_.*x_)^m_.*(a_+b_.*x_^n_)^p_.*Cosh[c_.+d_.*x_],x_Symbol] :=
-  Defer[Int][(e*x)^m*(a+b*x^n)^p*Cosh[c+d*x],x] /;
+  Int[(e*x)^m*(a+b*x^n)^p*Cosh[c+d*x],x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x]
 
 
@@ -480,12 +480,12 @@ FreeQ[{a,b,c,d,n},x] && IntegerQ[p] && LinearQ[u,x] && NonzeroQ[u-x]
 
 
 Int[(a_.+b_.*Sinh[c_.+d_.*u_^n_])^p_,x_Symbol] :=
-  Defer[Int][(a+b*Sinh[c+d*u^n])^p,x] /;
+  Int[(a+b*Sinh[c+d*u^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x] && LinearQ[u,x]
 
 
 Int[(a_.+b_.*Cosh[c_.+d_.*u_^n_])^p_,x_Symbol] :=
-  Defer[Int][(a+b*Cosh[c+d*u^n])^p,x] /;
+  Int[(a+b*Cosh[c+d*u^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x] && LinearQ[u,x]
 
 
@@ -796,12 +796,12 @@ FreeQ[{a,b,c,d,n,p},x] && LinearQ[u,x] && NonzeroQ[u-x] && IntegerQ[m]
 
 
 Int[(e_.*x_)^m_.*(a_.+b_.*Sinh[c_.+d_.*u_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(e*x)^m*(a+b*Sinh[c+d*u^n])^p,x] /;
+  Int[(e*x)^m*(a+b*Sinh[c+d*u^n])^p,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x] && LinearQ[u,x]
 
 
 Int[(e_.*x_)^m_.*(a_.+b_.*Cosh[c_.+d_.*u_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(e*x)^m*(a+b*Cosh[c+d*u^n])^p,x] /;
+  Int[(e*x)^m*(a+b*Cosh[c+d*u^n])^p,x] /;
 FreeQ[{a,b,c,d,e,m,n,p},x] && LinearQ[u,x]
 
 
@@ -950,12 +950,12 @@ FreeQ[{a,b,c,d,e},x] && RationalQ[m] && m<-1 && NonzeroQ[b*e-2*c*d]
 
 
 Int[(d_.+e_.*x_)^m_.*Sinh[a_.+b_.*x_+c_.*x_^2],x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Sinh[a+b*x+c*x^2],x] /;
+  Int[(d+e*x)^m*Sinh[a+b*x+c*x^2],x] /;
 FreeQ[{a,b,c,d,e,m},x]
 
 
 Int[(d_.+e_.*x_)^m_.*Cosh[a_.+b_.*x_+c_.*x_^2],x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Cosh[a+b*x+c*x^2],x] /;
+  Int[(d+e*x)^m*Cosh[a+b*x+c*x^2],x] /;
 FreeQ[{a,b,c,d,e,m},x]
 
 
@@ -1193,12 +1193,12 @@ FreeQ[{a,b,m,n},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Tanh[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Tanh[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Tanh[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Coth[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Coth[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Coth[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
@@ -1220,12 +1220,12 @@ FreeQ[{a,b,c,d,p},x] && PositiveIntegerQ[1/n] && IntegerQ[p]
 
 
 Int[(a_.+b_.*Tanh[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Tanh[c+d*x^n])^p,x] /;
+  Int[(a+b*Tanh[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
 Int[(a_.+b_.*Coth[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Coth[c+d*x^n])^p,x] /;
+  Int[(a+b*Coth[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
@@ -1270,12 +1270,12 @@ FreeQ[{c,d,m,n},x]
 
 
 Int[x_^m_.*(a_.+b_.*Tanh[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Tanh[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Tanh[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
 Int[x_^m_.*(a_.+b_.*Coth[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Coth[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Coth[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
@@ -1320,12 +1320,12 @@ FreeQ[{a,b,p},x] && RationalQ[m] && IntegerQ[n] && m-n>=0 && q===1
 
 
 Int[Tanh[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][Tanh[a+b*x+c*x^2]^n,x] /;
+  Int[Tanh[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
 Int[Coth[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][Coth[a+b*x+c*x^2]^n,x] /;
+  Int[Coth[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
@@ -1356,12 +1356,12 @@ FreeQ[{a,b,c},x] && RationalQ[m] && m>1 *)
 
 
 Int[(d_.+e_.*x_)^m_.*Tanh[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Tanh[a+b*x+c*x^2]^n,x] /;
+  Int[(d+e*x)^m*Tanh[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
 Int[(d_.+e_.*x_)^m_.*Coth[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Coth[a+b*x+c*x^2]^n,x] /;
+  Int[(d+e*x)^m*Coth[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
@@ -1499,12 +1499,12 @@ FreeQ[{m,n},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(c_.+d_.*x_)^m_.*Sech[a_.+b_.*x_]^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*Sech[a+b*x]^n,x] /;
+  Int[(c+d*x)^m*Sech[a+b*x]^n,x] /;
 FreeQ[{a,b,c,d,m,n},x]
 
 
 Int[(c_.+d_.*x_)^m_.*Csch[a_.+b_.*x_]^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*Csch[a+b*x]^n,x] /;
+  Int[(c+d*x)^m*Csch[a+b*x]^n,x] /;
 FreeQ[{a,b,c,d,m,n},x]
 
 
@@ -1527,12 +1527,12 @@ FreeQ[{a,b,c,d,p},x] && PositiveIntegerQ[1/n] && IntegerQ[p]
 
 
 Int[(a_.+b_.*Sech[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Sech[c+d*x^n])^p,x] /;
+  Int[(a+b*Sech[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
 Int[(a_.+b_.*Csch[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Csch[c+d*x^n])^p,x] /;
+  Int[(a+b*Csch[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
@@ -1567,12 +1567,12 @@ FreeQ[{a,b,c,d,m,n,p},x] && PositiveIntegerQ[Simplify[(m+1)/n]] && IntegerQ[p]
 
 
 Int[x_^m_.*(a_.+b_.*Sech[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Sech[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Sech[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
 Int[x_^m_.*(a_.+b_.*Csch[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Csch[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Csch[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 

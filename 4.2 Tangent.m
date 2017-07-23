@@ -1667,12 +1667,12 @@ FreeQ[{a,b,c,d,e,f,m,n,p},x] && Not[IntegerQ[n]] && Not[IntegerQ[m]]
 
 
 Int[(g_.*tan[e_.+f_.*x_])^p_.*(a_+b_.*tan[e_.+f_.*x_])^m_*(c_+d_.*tan[e_.+f_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(g*Tan[e+f*x])^p*(a+b*Tan[e+f*x])^m*(c+d*Tan[e+f*x])^n,x] /;
+  Int[(g*Tan[e+f*x])^p*(a+b*Tan[e+f*x])^m*(c+d*Tan[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
 Int[(g_.*cot[e_.+f_.*x_])^p_.*(a_+b_.*cot[e_.+f_.*x_])^m_*(c_+d_.*cot[e_.+f_.*x_])^n_,x_Symbol] :=
-  Defer[Int][(g*Cot[e+f*x])^p*(a+b*Cot[e+f*x])^m*(c+d*Cot[e+f*x])^n,x] /;
+  Int[(g*Cot[e+f*x])^p*(a+b*Cot[e+f*x])^m*(c+d*Cot[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,g,m,n,p},x]
 
 
@@ -3151,12 +3151,12 @@ FreeQ[{a,b,m,n},x] && LinearQ[{u,v},x] && Not[LinearMatchQ[{u,v},x]]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Tan[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Tan[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Tan[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
 Int[(c_.+d_.*x_)^m_.*(a_.+b_.*Cot[e_.+f_.*x_])^n_.,x_Symbol] :=
-  Defer[Int][(c+d*x)^m*(a+b*Cot[e+f*x])^n,x] /;
+  Int[(c+d*x)^m*(a+b*Cot[e+f*x])^n,x] /;
 FreeQ[{a,b,c,d,e,f,m,n},x]
 
 
@@ -3178,12 +3178,12 @@ FreeQ[{a,b,c,d,p},x] && PositiveIntegerQ[1/n] && IntegerQ[p]
 
 
 Int[(a_.+b_.*Tan[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Tan[c+d*x^n])^p,x] /;
+  Int[(a+b*Tan[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
 Int[(a_.+b_.*Cot[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][(a+b*Cot[c+d*x^n])^p,x] /;
+  Int[(a+b*Cot[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,n,p},x]
 
 
@@ -3256,12 +3256,12 @@ FreeQ[{a,b},x] && RationalQ[m,n,p] && 0<n<m+1 && p<-1 *)
 
 
 Int[x_^m_.*(a_.+b_.*Tan[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Tan[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Tan[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
 Int[x_^m_.*(a_.+b_.*Cot[c_.+d_.*x_^n_])^p_.,x_Symbol] :=
-  Defer[Int][x^m*(a+b*Cot[c+d*x^n])^p,x] /;
+  Int[x^m*(a+b*Cot[c+d*x^n])^p,x] /;
 FreeQ[{a,b,c,d,m,n,p},x]
 
 
@@ -3305,12 +3305,12 @@ FreeQ[{a,b,p},x] && RationalQ[m] && IntegerQ[n] && m-n>=0 && q===1
 
 
 Int[Tan[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][Tan[a+b*x+c*x^2]^n,x] /;
+  Int[Tan[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
 Int[Cot[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][Cot[a+b*x+c*x^2]^n,x] /;
+  Int[Cot[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,n},x]
 
 
@@ -3351,12 +3351,12 @@ FreeQ[{a,b,c},x] && RationalQ[m] && m>1*)
 
 
 Int[(d_.+e_.*x_)^m_.*Tan[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Tan[a+b*x+c*x^2]^n,x] /;
+  Int[(d+e*x)^m*Tan[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
 Int[(d_.+e_.*x_)^m_.*Cot[a_.+b_.*x_+c_.*x_^2]^n_.,x_Symbol] :=
-  Defer[Int][(d+e*x)^m*Cot[a+b*x+c*x^2]^n,x] /;
+  Int[(d+e*x)^m*Cot[a+b*x+c*x^2]^n,x] /;
 FreeQ[{a,b,c,d,e,m,n},x]
 
 
